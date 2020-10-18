@@ -1,0 +1,1197 @@
+
+
+/*********************************** FONTS ************************************/
+/* Définition des polices personnalisées - Générées par FontSquirrel */
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.eot');
+    src: url('fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff'),
+         url('fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('fonts/roboto-bold-webfont.eot');
+    src: url('fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('fonts/roboto-bold-webfont.woff') format('woff'),
+         url('fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoblack';
+    src: url('fonts/roboto-black-webfont.eot');
+    src: url('fonts/roboto-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto-black-webfont.woff2') format('woff2'),
+         url('fonts/roboto-black-webfont.woff') format('woff'),
+         url('fonts/roboto-black-webfont.ttf') format('truetype'),
+         url('fonts/roboto-black-webfont.svg#robotoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Eléments principaux de la page */
+
+body /* Styles généraux de la page */
+{
+  font-family: 'robotoregular', Arial, sans-serif; /* Police par défaut de la page : robotoregular */
+  color: #181818; /* Couleur de texte par défaut : noir */
+  margin: 0px; /* Suppression des marges du body pour l'affichage du slider en pleine largeur*/
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+/* Position et dimension du bloc page */
+#bloc_page {
+  width: 100%; /* Largeur */
+  margin : auto; /* Marges automatiques - Centrage du design */
+}
+
+/* Style de l'en-tête */
+header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+  position: fixed; /* Positionnement figé du header en haut à gauche de page */
+  top:0px;
+  Left: 0px;
+  width: 100%;
+  background-color: white;
+  z-index: 3; /* Header en premier plan et donc toujours visible en haut de page */
+}
+
+/* Position du logo */
+#logo_titre {
+  margin-left: 140px;
+}
+
+/* Style du bloc de navigation de l'en-tête */
+nav {
+  margin-right: 110px;
+  margin-top: 5px;
+}
+
+/* Style et affichage de la liste de navigation */
+nav ul {
+  display:flex; /* Placement horizontal et côte à côte des éléments de la liste avec flexbox */
+  list-style-type: none; /* Suppression des puces des éléments de la liste */
+}
+
+/* Style des éléments de la liste de navigation */
+nav li {
+  margin-right: 30px;/* Insertion d'une marge extérieure de 15 pixels à droite de chaque élément de la liste */
+}
+
+/* Style des liens de navigation */
+nav a {
+  font-size: 0.8em;
+  color :#79797c;
+  text-decoration: none;
+  padding: 40px 0 2px 0;
+}
+
+/* Style des liens de navigation au survol */
+nav a:hover{
+  color : #3491b2;
+  border-top: 5px #3491b2 solid;
+}
+
+/* Dimension et position de la bannière image contenant le slider et le bloc description */
+#banniere_image {
+  position:relative;
+  width: 100%;
+  height: 550px;
+  margin: 0px;
+  padding-top: 105px;
+}
+
+/* Dimension et position du container du slider - Ajusté en fonction de la taille des images, soit : 1600 x 550 pixels */
+#slider_container {
+  position: relative;
+  width: auto;/* Largeur automatique du container qui s'adapte automatiquement à son parent "Bannière_image" */
+  height: 550px;
+  overflow: hidden; /* On masque l'affichage des éléments du container (images du slider) lorsque ces derniers sont trop grands et débordent du container */
+}
+
+/* Style du slider de la bannière image */
+#slider {
+  position: absolute;/* Positionnement absolu du slider par rapport à son parent container : en haut et à gauche */
+  top:0px;
+  left: 0px;
+  display: flex; /* Les éléments du slider (les figures images) sont positionnées les unes à côté des autres grâce à flexbox */
+  width: auto;
+  height: 550px;
+}
+
+#slider figure {
+    position: relative;
+    display: inline-block;/* Grâce à inline-block, les figures de type "block" sont disposées sur une même ligne et sans flottement */
+    width: 110vw; /* La largeur des figures est relative et occupe 110% du Viewport. Elles sont ainsi mises à l'échelle automatiquement lorsque la taille du viewport (fenêtre) change */
+    height: 550px;
+    margin: 0px; /* Suppression des marges autour des figures du slider */
+}
+
+#slider figure img {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* Animation du slider */
+@keyframes slide { /* Définition des étapes de l'animation à l'aide de la directive css @keyframe  - L'animation est nommée "slide"*/
+    0% { /* Etape 0 de l'animation du slider (au début) - Affichage première image (par défaut) */
+      transform:translateX(0vw); /* Pas de mouvement - L'image ne bouge pas et reste dans sa position initiale */
+    }
+    100% { /* Etape 2 de l'animation du slider (à la moitié) - Affichage deuxième image */
+      transform: translateX(-110vw); /* L'image se déplace de -110% du viewport vers la gauche */
+    }
+}
+
+#slider:hover { /* Propriétés de l'animation du slider */
+    -webkit-animation: slide 3s; /* Nom et durée totale de l'animation - Utilisation du préfixe "webkit" pour la compatibilité avec Safari, Opera et Chrome */
+    animation: slide 3s; /* Nom et durée totale de l'animation - Sans préfixe "webkit" pour tous les autres navigateurs */
+    animation-timing-function: ease-in-out; /* Type d'accélération de l'animation */
+    animation-fill-mode:forwards; /* Après l'animation, l'élément reste sur sa position finale */
+}
+
+/* Position des flèches de navigation du slider */
+#fleche_gauche_slider a {
+  position: absolute; /* Positionnement absolu de la flèche gauche par raaport au container du slider */
+  top : 255px;
+  left: -40px;
+  font-size: 34px;
+  z-index: 2; /* Flèche gauche en second plan et donc toujours visible après le header (premier plan) */
+}
+
+/* Style du chevron de flèche gauche */
+.fa-chevron-left {
+  font-size: 0.6em;
+  margin-left: 15px;
+}
+
+#fleche_droite_slider a {
+  position: absolute; /* Positionnement absolu de la flèche doite par rapport au container du slider */
+  top : 255px;
+  right: -40px;
+  font-size: 34px;
+  z-index: 2;
+}
+
+/* Style du chevron de flèche gauche */
+.fa-chevron-right {
+  font-size: 0.6em;
+  margin-left: -15px;
+}
+
+/* Couleur de l'icône "fond circulaire" des flèches de navigation du slider */
+#fleche_gauche_slider span .fa-circle {
+  color: #3c3d3f;
+}
+
+#fleche_droite_slider span .fa-circle {
+  color: #3c3d3f;
+}
+
+/* Position de la description de la bannière */
+#banniere_description {
+  position:absolute;
+  width: 65%;
+  bottom: 220px;
+  left : 145px;
+}
+
+/* Style du titre principal de la bannière */
+#banniere_description h1 {
+  font-family: 'robotoblack',Arial, sans-serif;
+  color : white;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  width: 65%;
+  margin-bottom: 5px;
+}
+
+#banniere_description span {
+  color: #5cadd3;
+}
+
+#banniere_description p {
+  color: white;
+  font-size: 0.9em;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+/* Style du bouton bleu "Plus d'infos" */
+.bouton_bleu {
+  color: white;
+  font-size: 1.1em;
+  background-color: #5cadd3;
+  border: 1px #5cadd3 solid;
+  border-radius: 5px;
+  box-shadow:0px 4px 2px #2d809e;
+  text-decoration: none;
+  padding:8px 15px 8px 15px;
+}
+
+/* Styles généraux de la section services */
+#presentation_services {
+  width: 100%;
+  padding-top: 115px;
+}
+
+/* Style de l'icone du bloc de présentation des services */
+#accueil_services span .fa {
+  position: relative;
+  font-size: 14px;
+}
+/* Couleur de l'icône "cercle" du bloc de présentation des services */
+#accueil_services span.fa-circle {
+  color: #5cadd3;
+}
+
+/* Insertion des tirets de séparation avant et après l'icône de présentation des services à l'aide des pseudo éléments "before" et "after" */
+#accueil_services p:nth-child(2):before { /* Avant le deuxième enfant du parent "accueil_services" */
+  content: " "; /* Création d'un bloc "vide" */
+  display: inline-block; /* Affichage inline-block pour que le bloc se comporte comme un élément inline */
+  vertical-align: middle; /* Alignement vertical du bloc */
+  width : 75px; /* Largeur du bloc créé */
+  height : 0px; /* Hauteur du bloc créé */
+  border-bottom: 1px #edeaea solid; /* Application d'une bordure pour créer le tiret */
+  margin-right: 3px;
+  padding-top: 0px;
+}
+#accueil_services p:nth-child(2):after {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  width : 75px;
+  height : 0px;
+  border-bottom: 1px #edeaea solid;
+  margin-left: 3px;
+  padding-top: 0px;
+}
+
+/* Style du titre de la section services */
+#accueil_services h2 {
+text-align: center;
+text-transform: uppercase;
+font-family: 'robotobold',Arial, sans-serif;
+font-size: 2.5em;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+/* Style des paragraphes de la section services */
+#accueil_services p {
+  text-align: center;
+  font-size: 0.9em;
+  color: #79797c;
+  margin:10px 350px 10px 350px;
+}
+
+#detail_services {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  margin : 10px 120px 10px 120px;
+}
+
+/* Style de l'image de l'article de la section services */
+.image_principale {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Position du bloc aside */
+aside {
+  margin: 105px 20px 20px 90px;
+}
+
+/* Style des titres des rubriques du bloc aside de la section services */
+aside h3 {
+  font-family: 'robotobold',Arial, sans-serif;
+  font-size:1.1em;
+  margin-bottom: 5px;
+}
+
+/* Style des paragraphes des rubriques du bloc aside de la section services */
+aside p {
+  text-align: justify;
+  font-size: 0.9em;
+  color: #79797c;
+  margin-top: 5px;
+}
+
+/* Mise en page des rubriques du bloc aside */
+.rubrique_1, .rubrique_2, .rubrique_3{
+  position: relative;
+  display: flex;
+}
+
+/* Définition des marges extérieures des rubriques du bloc aside */
+.description_rubrique1, .description_rubrique2, .description_rubrique3 {
+  margin: 0px 20px 0px 90px;
+}
+
+/* Style des icônes des rubriques du bloc aside */
+.icone_rubrique span {
+  position: absolute;
+  left: 1px;
+  bottom: 40px;
+  font-size: 29px;
+  color: #5cadd3;
+}
+
+/* Style des icônes "point" des rubriques */
+.point_rubrique span {
+  position: absolute;
+  left: 38px;
+  bottom: 46px;
+  font-size: 13px;
+  z-index: 1; /* Point des rubriques en premier plan par rapport au c"ercle-anneau" des rubriques */
+}
+
+/* Style des icônes "cercle" des rubriques */
+.cercle_rubrique span {
+  position: absolute;
+  font-size: 76px;
+  left: -25px;
+  bottom: 9px;
+}
+
+/* Couleur des icônes "cercle-anneau" des rubriques */
+.cercle_rubrique .fa-circle {
+  color: white;
+}
+
+/* Bordure des icônes "cercle-anneau" des rubriques */
+.cercle_rubrique i {
+  border-radius: 60px;
+  border: 2px solid #edeaea;
+}
+
+/* Styles généraux de la section projets */
+#presentation_projets {
+  width: 100%;
+  padding-top: 95px;
+  background-color: #f5f5f5;
+}
+
+/* Style de l'icone du bloc de présentation de la section projets */
+#accueil_projets span {
+  position: relative;
+  font-size: 14px; /* Taille de l'icône du bloc de présentation */
+}
+
+.fa-circle { /* Couleur bleue par défaut des icônes "cercle"*/
+  color: #5cadd3;
+}
+
+/* Insertion de tirets de séparation avant et après l'icône de présentation des projets à l'aide des pseudo éléments "before" et "after" */
+#accueil_projets p:nth-child(2):before { /* Avant le deuxième enfant du parent "accueil_projets" */
+  content: " "; /* Création d'un bloc "vide" */
+  display: inline-block; /* Affichage inline-block pour que le bloc se comporte comme un élément inline */
+  vertical-align: middle; /* Alignement vertical du bloc */
+  width : 75px; /* Largeur du bloc créé */
+  height : 0px; /* Hauteur du bloc créé */
+  border-bottom: 1px #edeaea solid; /* Application d'une bordure pour créer le tiret */
+  margin-right: 3px;
+  padding-top: 0px;
+}
+#accueil_projets p:nth-child(2):after { /* Après le deuxième enfant du parent "accueil_projets" */
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  width : 75px;
+  height : 0px;
+  border-bottom: 1px #edeaea solid;
+  margin-left: 3px;
+  padding-top: 0px;
+}
+
+/* Style du titre de présentation de la section projets */
+#accueil_projets h2 {
+text-align: center;
+text-transform: uppercase;
+font-family: 'robotobold',Arial, sans-serif;
+font-size: 2.5em;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+/* Style du paragraphe de présentation de la section projets */
+#accueil_projets p {
+  text-align: center;
+  font-size: 0.9em;
+  color: #79797c;
+  margin:10px 350px 10px 350px;
+}
+
+/* Mise en page du bloc portfolio */
+.portfolio {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Marges entre les items du portfolio */
+.portfolio_item1, .portfolio_item2, .portfolio_item3, .portfolio_item4, .portfolio_item5, .portfolio_item6, .portfolio_item7, .portfolio_item8 {
+  position: relative;
+  width:264px;
+  overflow: hidden; /* On masque l'affichage des éléments des containers (portfolio_item 1 à 8) lorsque ces derniers sont trop grands et débordent du container */
+  margin:3px 15px;
+}
+
+/* Affichage d'un texte descriptif au survol du lien de l'image */
+.portfolio_item1 img, .portfolio_item2 img, .portfolio_item3 img, .portfolio_item4 img, .portfolio_item5 img, .portfolio_item6 img, .portfolio_item7 img, .portfolio_item8 img {
+  Position: relative;
+}
+
+/* Paramétrage d'une transition pour l'affichage du texte descriptif au survol - Applicable à tous les "span" du portfolio */
+.portfolio_item1 span, .portfolio_item2 span, .portfolio_item3 span, .portfolio_item4 span, .portfolio_item5 span, .portfolio_item6 span, .portfolio_item7 span, .portfolio_item8 span {
+  display: block;
+  position: absolute;
+  width:264px; /* Largeur du bloc de commentaire égale à la largeur de l'image du portfolio */
+  height:55px; /* Hauteur du bloc de commentaire égale à la hauteur de l'image du portfolio */
+  bottom:21px; /* Position du bloc "span" en position initiale  par rapport à l'image : 21px à partir du bas */
+  left : -280px; /* Position du bloc "span" en position initiale  par rapport à l'image : -280px à partir de la gauche */
+  padding: 0.25em;
+  color: white;
+  background-color: #4f5054;
+  opacity : 0.8;
+  transition-property: transform ; /* Application d'une transition sur la propriété "transform" - La transition est activée au survol de la souris (lors du hover) */
+  transition-duration: 1.2s; /* Durée de la transition appliquée = 1 seconde */
+  transition-timing-function: ease; /* Transition de type ease (avec un ralenti) */
+  z-index: 1; /* Affichage du bloc "span" de commentaire en premier plan par rapport aux images du portfolio */
+}
+
+/* Lancement de la transition à partir du hover */
+.portfolio_item1:hover span, .portfolio_item2:hover span, .portfolio_item3:hover span, .portfolio_item4:hover span, .portfolio_item5:hover span, .portfolio_item6:hover span, .portfolio_item7:hover span, .portfolio_item8:hover span {
+  transform: translateX(280px); /* Le bloc commentaire et déplacé horizontalement de 280 pixels (translation) */
+}
+
+/* Style, dimension et position de l'icône "Oeil" sur fond bleu du texte descriptif du portfolio */
+.icone_oeil span {
+  display: block;
+  position: absolute;
+  width: 31px;
+  height: 33px;
+  bottom: 68px;
+  left:-72px;
+  font-size: 21px;
+  background-color:inherit;/* le bloc "icone_oeil" hérite de la couleur de fond de l'élément parent immédiat */
+  opacity: 0.9;
+}
+
+/* Fonds circulaire bleu de l'icône "Oeil" du texte descriptif du portfolio */
+.icone_oeil .fa-circle {
+  color: #5cadd3;
+}
+
+/* Bordure blanche autour de l'icône "Oeil" du texte descriptif du portfolio */
+.icone_oeil i {
+  border-radius: 60px;
+  border: 2px solid white;
+}
+
+/* Dimension et position du menu de navigation projet */
+#menu_projets {
+  width: 100%;
+  margin: 55px 0px 40px 0px;
+}
+
+/* Styles généraux de la liste du menu de navigation projet */
+#menu_projets ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 0px;
+}
+
+/* Style des items de liste du menu de navigation projet */
+#menu_projets li {
+  list-style-type: none;
+}
+
+/* Style des liens du menu de navigation projets */
+#menu_projets a {
+  text-decoration: none;
+  color: #79797c;
+  font-size: 0.9em;
+  background-color: #e5e5e5;
+  padding:8px 15px 8px 15px;
+  z-index: 3;
+}
+
+/* Bordure arrondie en haut/gauche et bas/gauche sur le lien du premier élément de la liste du menu de navigation projets */
+#menu_projets li:first-child a {
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* Bordure arrondie en haut/droite et bas/droite sur le lien du dernier élément de la liste du menu de navigation projets */
+#menu_projets li:last-child a {
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* Style des liens du menu projet au survol de la souris */
+#menu_projets a:hover {
+  position: relative; /* Hover sur le lien en position relative */
+  background-color: #539fbc;
+  color: white;
+  border-bottom: 3px #2d809e solid;
+  z-index: 2;
+}
+
+/* Insertion d'un objet  "pointe" sous les liens du menu projet à l'aide du pseudo élément after */
+#menu_projets a:after {
+  position: absolute; /* Objet en position absolue par rapport à son parent a:hover */
+  top: 31px;
+  left: 45%; /* Centrage de l'objet par rapport à son parent relatif "hover"; */
+  content: " "; /* Création d'un bloc "vide" */
+  display: inline-block; /* Affichage inline-block pour que le bloc se comporte comme un élément inline */
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg); /* Rotation de l'objet de 45 degrés */
+  background-color: #2d809e;
+  z-index: -1; /* Le z-index négatif permet à l'objet "pointe" d'être positionné en arrière plan par rapport à son parent a:hover */
+}
+
+/* Dimension et position du bloc pied de page */
+#map_contact {
+  width: 100%;
+  margin: 55px 0px 40px 0px;
+  position: relative;
+}
+
+/* Dimension de l'iframe Google Map */
+#map_contact iframe {
+  width: 100%;
+  z-index: 1
+}
+
+#filtre_bleu {
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(87, 188, 255, 0.325);
+  pointer-events: none; /* Annule le déclenchement d'évènements au clic de la souris sur le filtre bleu */
+}
+
+/* Position et dimension du bloc formulaire de contact */
+#formulaire_contact {
+  position:absolute;
+  top : 35px;
+  right: 55px;
+  width: 360px;
+  height: 515px;
+  background-color: #f5f5f5;
+  opacity: 0.9; /* Transparence du bloc de formulaire de contact */
+  padding-top: 40px;
+  z-index: 2;
+}
+
+/* Style du titre du bloc intro du formulaire */
+#intro_formulaire h2 {
+  font-family: 'robotobold',Arial, sans-serif;
+  color: black;
+  margin: 5px 0px 5px 20px;
+}
+
+/* Style des paragraphes du bloc intro du formulaire */
+#intro_formulaire p {
+  color: #79797c;
+  margin: 5px 0px 5px 20px;
+  font-size: 0.9em;
+}
+
+.zone_saisie {
+  margin: 0px 0px 5px 20px;
+}
+
+/* Styles des bordures des zones de saisie du formulaire */
+input, textarea {
+  border: 1px #79797c solid;
+  border-radius: 2px;
+}
+
+/* Dimension des zones de saisie du formulaire */
+input {
+  width: 310px;
+  height: 30px;
+  margin-top: 15px;
+  font-size: 80%;
+  padding-left: 10px;
+}
+
+/* Dimension de la zone de texte multiligne du formulaire */
+textarea {
+  width: 308px;
+  height: 160px;
+  margin-top: 15px;
+  font-size: 80%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+/* Style du bouton d'envoi du formulaire */
+#bouton_envoi {
+  width: 150px;
+  height:32px;
+  margin-top: 10px;
+  color: white;
+  font-size: 1em;
+  background-color: #3491b2;
+  box-shadow:0px 4px 2px #2d809e;
+}
+
+
+
+/******************************** MEDIA QUERIES *******************************/
+
+@media all and (max-width: 1200px){
+
+  #banniere_image { /* Ajustement de la position de la bannière image */
+    height: 350px;
+    padding-top: 120px;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 65%;
+    bottom: 12px;
+    left: 100px;
+  }
+
+  /* Ajustement des flèches de navigation du slider */
+  #fleche_gauche_slider a {
+    top : 200px;
+  }
+
+  #fleche_droite_slider a {
+    top : 200px;
+  }
+
+  #accueil_services p {
+    margin:10px 250px 10px 250px;
+  }
+  #detail_services {
+    margin : 10px 30px 10px 30px;
+  }
+  aside {
+    margin: 80px 20px 20px 20px; /* Ajustement des marges du bloc aside */
+  }
+  #accueil_projets p {
+    margin:10px 250px 10px 250px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+
+  #banniere_image { /* Ajustement de la position de la bannière image */
+    height: 280px;
+    padding-top: 130px;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 65%;
+    bottom: 25px;
+    left: 70px;
+  }
+  #banniere_description h1 { /* Style du titre principal de la bannière */
+    width: auto;
+    margin: auto;
+  }
+
+  /* Ajustement des flèches de navigation du slider */
+  #fleche_gauche_slider a {
+    top : 155px;
+  }
+
+  #fleche_droite_slider a {
+    top : 155px;
+  }
+
+  #presentation_services { /* Styles généraux de la section services */
+    width: auto;
+    padding-top: 120px;
+  }
+  #accueil_services h2 { /* Style du titre de la section services */
+  font-size: 2em; /* Réduction de la taille de police du titre de la section service */
+  }
+  #accueil_services p { /* Style des paragraphes de la section services */
+    margin:10px 90px 10px 90px; /* Réduction des marges à gauche et à droite du paragraphe de présentation des services */
+  }
+  #detail_services {
+    flex-direction: column;/* Affichage des éléments de la section service (article et aside) sous forme de colonnes */
+    align-items: center; /* Alignement centré des éléments par rapport à l'axe secondaire vertical */
+    margin: 10px 10px 10px 10px;
+  }
+  article {
+    width: auto;
+    margin-top: 0px;
+  }
+  article p {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  aside {
+    margin: 15px 40px 15px 40px; /* Ajustement des marges du bloc aside */
+  }
+
+  #presentation_projets {
+    width: auto; /* Application d'une marge automatique sur la section projets */
+    padding-top: 90px; /* Augmentation de la marge intérieure pour optimiser l'affichage */
+  }
+  #accueil_projets h2 {
+  font-size: 2em; /* Réduction de la taille de police du titre de la section service */
+  }
+  #accueil_projets p {
+    margin:10px 90px 10px 90px;
+  }
+  #menu_projets { /* Application d'une marge automatique sur menu de navigation projets */
+    width: auto;
+    margin: 35px 0px 25px 0px; /* Réduction des marges en haut et en bas du menu de navigation projets */
+  }
+  /* Dimension et position du bloc pied de page */
+  #map_contact {
+    width: auto;
+  }
+}
+
+@media all and (max-width: 992px) {
+
+  #logo_titre { /* Ajustement de la position du logo - Réduction de la marge extérieure à gauche */
+    margin-left: 110px;
+  }
+  #banniere_image { /* Ajustement de la position de la bannière image */
+    height: 250px;
+    padding-top: 160px;
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  /* Style de l'en-tête */
+  header {
+    display:block;
+  }
+
+  #logo_titre { /* Ajustement de la position du logo - Réduction de la marge extérieure à gauche */
+    margin-left: 40px;
+  }
+  nav { /* Ajustement de la barre de navigation - Suppression de la marge à droite*/
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+  nav ul {
+    margin-top: 25px;
+  }
+  nav li {
+    margin-right: 40px;
+  }
+  nav a {
+    padding: 0px 0 2px 0;
+  }
+  nav a:hover{
+    border-top: 0px; /* Suppression de la bordure du lien au survol */
+  }
+
+  #slider figure {
+      position: relative;
+      display: inline-block;/* Grâce à inline-block, les figures de type "block" sont disposées sur une même ligne et sans flottement */
+      width: 110vw; /* La largeur des figures est relative et occupe 110% du Viewport. Elles sont ainsi mises à l'échelle automatiquement lorsque la taille du viewport (fenêtre) change */
+      height: 550px;
+      margin: 0px; /* Suppression des marges autour des figures du slider */
+  }
+
+  #slider figure img {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+  }
+
+  #banniere_image { /* Ajustement de la position de la bannière image */
+    height: 160px;
+    padding-top: 190px;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 80%;
+    bottom: -28px;
+    left: 23px;
+  }
+
+  /* Style du titre principal de la bannière */
+  #banniere_description h1 {
+    font-size: 1.8em;
+    width: 90%;
+    margin:auto;
+  }
+
+  #banniere_description p {
+    font-size: 0.7em;
+    margin: 2px 0px 10px 28px;
+  }
+
+  /* Style du bouton bleu "Plus d'infos" */
+  .bouton_bleu {
+    font-size: 0.8em;
+    margin-left: 28px;
+  }
+
+  /* Ajustement des flèches de navigation du slider */
+  #fleche_gauche_slider a {
+    top : 75px;
+    font-size: 28px;
+  }
+
+  #fleche_droite_slider a {
+    top : 75px;
+    font-size: 28px;
+  }
+
+  #accueil_services h2 { /* Style du titre de la section services */
+  font-size: 1.6em;
+  }
+
+  .image_principale img {
+    width: 100%
+  }
+
+  #accueil_projets h2 {
+  font-size: 1.6em;
+  }
+
+  #presentation_projets {
+    padding-top: 140px;
+  }
+
+  #presentation_services { /* Styles généraux de la section services */
+    padding-top: 140px;
+  }
+}
+
+@media all and (max-width: 576px){
+
+  nav { /* Ajustement de la barre de navigation - Marge automatique*/
+    margin: auto;
+  }
+
+  nav ul {
+    padding-left: 80px;
+  }
+
+  #banniere_image { /* Ajustement de la position de la bannière image */
+    height: 70px;
+    padding-top: 175px;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 80%;
+    bottom: -65px;
+    left: 35px;
+  }
+
+  /* Style du titre principal de la bannière */
+  #banniere_description h1 {
+    font-size: 1.3em;
+    width: 100%;
+    margin:auto;
+  }
+
+  #banniere_description p {
+    font-size: 0.7em;
+    margin: auto;
+  }
+
+  /* Style du bouton bleu "Plus d'infos" */
+  .bouton_bleu {
+    font-size: 0.7em;
+    margin:auto;
+  }
+
+  /* Ajustement des flèches de navigation du slider */
+  #fleche_gauche_slider a {
+    top : 75px;
+    font-size: 25px;
+  }
+
+  #fleche_droite_slider a {
+    top : 75px;
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 420px){
+
+  #logo_titre { /* Ajustement de la position du logo - Réduction de la marge extérieure à gauche */
+    margin-left: 35px;
+  }
+
+  nav ul {
+    padding-left: 30px;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 80%;
+    bottom: -60px;
+    left: 27px;
+  }
+
+  #accueil_services h2 {
+  font-size: 1.4em;
+  }
+
+  /* Définition des marges extérieures des rubriques du bloc aside */
+  .description_rubrique1, .description_rubrique2, .description_rubrique3 {
+    margin: 0px 0px 0px 50px;
+  }
+
+  /* Ajustement de la taille du texte des paragraphes des rubriques */
+  aside p {
+    font-size: 0.8em;
+  }
+
+  /* Ajustement des icônes des rubriques du bloc aside */
+  .icone_rubrique span {
+    left: -9px;
+    bottom: 75px;
+    font-size: 24px;
+  }
+
+  /* Ajustement des icônes "point" des rubriques */
+  .point_rubrique span {
+    left: 18px;
+    bottom: 85px;
+    font-size: 8px;
+  }
+
+  /* Style des icônes "cercle" des rubriques */
+  .cercle_rubrique span {
+    font-size: 50px;
+    left: -25px;
+    bottom: 59px;
+  }
+
+  #accueil_projets h2 {
+  font-size: 1.4em;
+  }
+
+  /* Style des paragraphes du bloc intro du formulaire */
+  #intro_formulaire p {
+    margin: 5px 0px 5px 20px;
+  }
+
+  /* Dimension de l'iframe Google Map */
+  #map_contact iframe {
+    display: none;
+  }
+
+  #filtre_bleu {
+    display: none;
+  }
+
+  #formulaire_contact {
+    position:absolute;
+    top : 23px;
+    right: 0px;
+    width: 411px;
+    height: 515px;
+  }
+
+  .zone_saisie {
+    margin: 0px 0px 5px 18px;
+  }
+
+  /* Dimension des zones de saisie du formulaire */
+  input {
+    width: 360px;
+    height: 30px;
+  }
+
+  /* Dimension de la zone de texte multiligne du formulaire */
+  textarea {
+    width: 360px;
+    height: 160px;
+  }
+
+}
+
+
+@media all and (max-width: 380px){
+
+  #logo_titre { /* Ajustement de la position du logo - Réduction de la marge extérieure à gauche */
+    margin-left: 30px;
+  }
+
+  nav ul {
+    padding-left: 30px;
+  }
+
+  /* Insertion des tirets de séparation avant et après l'icône de présentation des services à l'aide des pseudo éléments "before" et "after" */
+  #accueil_services p:nth-child(2):before {
+    width : 40px;
+
+  }
+  #accueil_services p:nth-child(2):after {
+    width : 40px;
+  }
+
+  /* Insertion de tirets de séparation avant et après l'icône de présentation des projets à l'aide des pseudo éléments "before" et "after" */
+  #accueil_projets p:nth-child(2):before {
+    width : 40px;
+  }
+
+  #accueil_projets p:nth-child(2):after {
+    width : 40px;
+  }
+
+  #menu_projets a {
+    font-size: 0.8em;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 90%;
+    bottom: -50px;
+    left: 23px;
+  }
+
+  /* Style des paragraphes du bloc intro du formulaire */
+  #intro_formulaire p {
+    margin: 5px 0px 5px 20px;
+  }
+
+  /* Ajustement de la position et dimension du bloc formulaire de contact */
+  #formulaire_contact {
+    position:absolute;
+    top : 23px;
+    right: 0px;
+    width: 373px;
+    height: 515px;
+  }
+
+  .zone_saisie {
+    margin: 0px 0px 5px 18px;
+  }
+
+  /* Dimension des zones de saisie du formulaire */
+  input {
+    width: 320px;
+    height: 30px;
+  }
+
+  /* Dimension de la zone de texte multiligne du formulaire */
+  textarea {
+    width: 320px;
+    height: 160px;
+  }
+}
+
+
+@media all and (max-width: 320px){
+
+  #logo_titre { /* Ajustement de la position du logo - Réduction de la marge extérieure à gauche */
+    margin-left: 20px;
+  }
+
+  nav ul {
+    padding-left: 30px;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  /* Insertion des tirets de séparation avant et après l'icône de présentation des services à l'aide des pseudo éléments "before" et "after" */
+  #accueil_services p:nth-child(2):before {
+    width : 35px;
+  }
+
+  #accueil_services p:nth-child(2):after {
+    width : 35px;
+  }
+
+  /* Insertion de tirets de séparation avant et après l'icône de présentation des projets à l'aide des pseudo éléments "before" et "after" */
+  #accueil_projets p:nth-child(2):before {
+    width : 35px;
+  }
+
+  #accueil_projets p:nth-child(2):after {
+    width : 35px;
+  }
+
+  #menu_projets a {
+    font-size: 0.7em;
+  }
+
+  #banniere_description { /* Position de la description de la bannière */
+    width: 80%;
+    bottom: -60px;
+    left: 35px;
+  }
+
+  /* Ajustement de la position et dimension du bloc formulaire de contact */
+  #formulaire_contact {
+    right: 8px;
+  }
+
+  /* Style des paragraphes du bloc intro du formulaire */
+  #intro_formulaire p {
+    margin: 5px 0px 5px 20px;
+  }
+
+  /* Position et dimension du bloc formulaire de contact */
+  #formulaire_contact {
+    position:absolute;
+    top : 44px;
+    right: 0px;
+    width: 320px;
+  }
+
+  /* Style du titre du bloc intro du formulaire */
+  #intro_formulaire h2 {
+    font-family: 'robotobold',Arial, sans-serif;
+    color: black;
+    margin: 5px 0px 5px 20px;
+  }
+
+  /* Style des paragraphes du bloc intro du formulaire */
+  #intro_formulaire p {
+    margin: 5px 0px 5px 20px;
+    font-size: 0.9em;
+  }
+
+  .zone_saisie {
+    margin: 0px 0px 5px 18px;
+  }
+
+  /* Dimension des zones de saisie du formulaire */
+  input {
+    width: 275px;
+    height: 30px;
+  }
+
+  /* Dimension de la zone de texte multiligne du formulaire */
+  textarea {
+    width: 275px;
+    height: 160px;
+  }
+
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr"> <!--Language-->
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> <!-- Encodage affichage Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Encodage affichage mobiles -->
+    <!-- Site title -->
+    <title>Webagency</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div id="bloc_page"> <!-- Bloc de la page principale -->
+
+      <header> <!-- Bloc d'en-tête de la page -->
+        <div id="logo_titre"> <!-- Logo de la page -->
+          <p><img src="images/logo.png" alt="logo webagency"></p>
+        </div>
+
+        <nav> <!-- Bloc de navigation de l'en-tête -->
+          <ul> <!-- Liste des liens de navigation -->
+            <li><a href="#banniere_image">Accueil</a></li>
+            <li><a href="#presentation_services">Services</a></li>
+            <li><a href="#presentation_projets">Portfolio</a></li>
+            <li><a href="#map_contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div id="banniere_image"> <!-- Bloc Accueil/Bannière-image de la page contenant : un slider et un bloc descriptif -->
+
+        <div id="slider_container"> <!-- Conteneur du slider - Fenêtre de visualisation -->
+          <div id="fleche_gauche_slider"> <!-- Superposition de deux icônes (cercle et flèche gauche) à l'aide de la classe "fa-stack" de Fontawesome -->
+            <p><a href="#"><span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-chevron-left fa-stack-1x fa-inverse"></i></span></a></p>
+          </div>
+          <div id="fleche_droite_slider">
+            <p><a href="#"><span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-chevron-right fa-stack-1x fa-inverse"></i></span></a></p>
+          </div>
+          <div id="slider"> <!-- Intégration de la fenêtre du slider contenant les images -->
+            <figure id="slide1"> <!-- Première image du slider -->
+              <img src="images/slider/bg1.jpg" alt="premiere-image">
+            </figure>
+            <figure id="slide2"> <!-- Deuxième image du slider -->
+              <img src="images/slider/bg2.jpg" alt="deuxième-image">
+            </figure>
+          </div>
+        </div>
+
+        <div id="banniere_description">
+          <h1><span>Web Agency</span> : l'agence de tous vos projets !</h1>
+          <p>Vous avez un projet web ? La Webagency vous aide à le réaliser !</p><br>
+          <a href="#infos" class="bouton_bleu">Plus d'infos</a>
+        </div>
+
+      </div>
+
+      <section id="presentation_services"> <!-- Bloc section "Services" -->
+        <div id="accueil_services">
+          <h2>Nos services</h2>
+          <p><span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="fas fa-circle fa-stack-1x"></i></span></p> <!-- Icône "point bleu" sur fond blanc du bloc "services" -->
+          <p>Notre agence vous propose des services efficaces adaptés à vos besoins, mettant en oeuvre les dernières technologies du web. Nous vous accompagnons dans la réalisation de vos projets numériques en vous garantissant qualité, innovation et performance.</p>
+        </div>
+
+        <div id="detail_services">
+          <div class="image_principale">
+            <img src="images/main-feature.png" alt="ecran apple">
+          </div>
+
+          <aside> <!-- Bloc aside avec 3 rubriques -->
+            <div class="rubrique_1">
+                <div class="icone_rubrique">
+                  <p><span><i class="fas fa-chart-line"></i></span></p>
+                </div>
+                <div class="point_rubrique">
+                  <p><span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="fas fa-circle fa-stack-1x"></i></span></p>
+                </div>
+                <div class="cercle_rubrique">
+                  <p><span><i class="far fa-circle"></i></span></p>
+                </div>
+                <div class="description_rubrique1">
+                  <h3>UX design</h3>
+                  <p>Nous pensons et concevons des sites internet répondant à vos attentes afin de garantir une expérience utilisateur optimum.</p>
+                </div>
+            </div>
+
+            <div class="rubrique_2">
+              <div class="icone_rubrique">
+                <p><span><i class="fas fa-cubes"></i></span></p>
+              </div>
+              <div class="point_rubrique">
+                <p><span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="fas fa-circle fa-stack-1x"></i></span></p>
+              </div>
+              <div class="cercle_rubrique">
+                <p><span><i class="far fa-circle"></i></span></p>
+              </div>
+              <div class="description_rubrique2">
+                <h3>UI design</h3>
+                <p>Nos designers créent pour vous des interfaces graphiques personnalisées, ergonomiques, simples d'utilisation et adaptées aux différents terminaux.</p>
+              </div>
+            </div>
+
+            <div class="rubrique_3">
+              <div class="icone_rubrique">
+                <p><span><i class="fas fa-chart-pie"></i></span></p>
+              </div>
+              <div class="point_rubrique">
+                <p><span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="fas fa-circle fa-stack-1x"></i></span></p>
+              </div>
+              <div class="cercle_rubrique">
+                <p><span><i class="far fa-circle"></i></span></p>
+              </div>
+              <div class="description_rubrique3">
+                <h3>SEO</h3>
+                <p>Nous mettons en oeuvre une approche globale qui allie optimisation et positionnement afin d'atteindre vos objectifs de trafic et de visibilité sur les moteurs de recherche.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="presentation_projets"> <!-- Bloc section "Projets" -->
+        <div id="accueil_projets">
+          <h2>Nos projets</h2>
+          <p><span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="fas fa-circle fa-stack-1x"></i></span></p>
+          <p>Découvrez un peu plus l'univers créatif de notre agence en consultant nos dernières réalisations. Vous trouverez ici quelques projets récemment créés par notre équipe.</p>
+        </div>
+
+        <div id="menu_projets">
+          <ul>
+            <li><a href="#Allwork">All Works</a></li>
+            <li><a href="#Creative">Creative</a></li>
+            <li><a href="#Corporate">Corporate</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="portfolio">
+          <div class="portfolio_item1">
+            <span>Expo - "Bas les masques"</span> <!-- Texte descriptif de l'image qui s'affiche au survol du lien -->
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item1"><img src="images/portfolio_petit/01petit.jpg" alt="lunettes"></a></p>
+          </div>
+          <div class="portfolio_item2">
+            <span>The Pink Bunny Festival</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item2"><img src="images/portfolio_petit/02petit.jpg" alt="lapin"></a></p>
+          </div>
+          <div class="portfolio_item3">
+            <span>Original Pompadour !</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item3"><img src="images/portfolio_petit/03petit.jpg" alt="pompadour"></a></p>
+          </div>
+          <div class="portfolio_item4">
+            <span>Perform Consulting</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item4"><img src="images/portfolio_petit/04petit.jpg" alt="plan"></a></p>
+          </div>
+          <div class="portfolio_item5">
+            <span>La boutique des délices</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item5"><img src="images/portfolio_petit/05petit.jpg" alt="sac"></a></p>
+          </div>
+          <div class="portfolio_item6">
+            <span>Arts and design Meetup</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item6"><img src="images/portfolio_petit/06petit.jpg" alt="ville"></a></p>
+          </div>
+          <div class="portfolio_item7">
+            <span>Décollage immédiat !</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item7"><img src="images/portfolio_petit/07petit.jpg" alt="stylo"></a></p>
+          </div>
+          <div class="portfolio_item8">
+            <span>Atelier des petits artistes</span>
+            <div class="icone_oeil">
+              <span class="fa-stack"><i class="fas fa-circle fa-stack-2x fa-inverse"></i><i class="far fa-eye fa-stack-1x"></i></span>
+            </div>
+            <p><a href="#item8"><img src="images/portfolio_petit/08petit.jpg" alt="bureau"></a></p>
+          </div>
+        </div>
+      </section>
+
+      <footer> <!-- Bloc du pied de page -->
+        <div id="map_contact"> <!-- Insertion d'une map à partir de Google Map -->
+          <div id="filtre_bleu"></div> <!-- Insertion d'un filtre bleu sur la map -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5248.448231713001!2d2.352122!3d48.873004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sen!2sfr!4v1554470762500!5m2!1sen!2sfr" height="600" style="border:0" allowfullscreen></iframe>
+          <div id="formulaire_contact">
+            <div id="intro_formulaire">
+              <h2>Contact Info</h2>
+              <p>WebAgency SAS</p>
+              <p>25 rue d'Hauteville 75010 Paris</p>
+              <p>Tel: 01.02.03.04.05</p>
+            </div>
+            <form class="zone_saisie" action="traitement.php" method="post"> <!--Formulaire de contact -->
+              <p>
+                <input type="text" name="name" placeholder="Name" size="45" maxlength="30"><br> <!-- Zone de saisie monoligne de type texte -->
+                <input type="email" name="email" placeholder="Email" size="45" maxlength="30"><br> <!-- Zone de saisie monoligne de type email -->
+                <input type="text" name="subject" placeholder="Subject" size="45" maxlength="30"><br> <!-- Zone de saisie monoligne de type texte -->
+                <textarea name="name" placeholder="Message"></textarea><br> <!-- Zone de saisie multiligne de type area -->
+                <input type="submit" name="send" value="Send Message" id="bouton_envoi">
+              </p>
+            </form>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
